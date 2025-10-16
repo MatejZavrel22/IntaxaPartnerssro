@@ -22,10 +22,10 @@
     <!-- Odkazy zarovnané doprava -->
     <ul class="navigacni-odkazy">
       <li><a href="index.html">Domů</a></li>
-      <li><a href="oNas.html">O nás</a></li>
+      <li><a href="oNas.html" aria-current="page">O nás</a></li>
       <li><a href="sluzby">Účetnictví</a></li>
       <li><a href="mzdy">Mzdy</a></li>
-      <li><a href="digitalizace">Digitalizace</a></li>
+      <li><a href="digitalizace.html">Digitalizace</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
 
@@ -36,162 +36,172 @@
 
 <main>
 
-  <!-- HERO NADPIS O NÁS -->
-  <section class="sekce-hero" aria-labelledby="nadpis-o-nas">
-    <div class="obal-hero">
-      <h1 id="nadpis-o-nas" class="nadpis-podtrzeny">
-        O nás a našich službách
-      </h1>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-nadpis">
+    <div class="hero-obal">
+      <h1 id="hero-nadpis" class="hero-titulek">O nás a našich službách</h1>
     </div>
   </section>
 
-
-
-<!-- Úvodní blok --> 
-<section class="sek-uvod-modry">
-  <div class="obsah uvod">
-    <div class="flex-wrapper">
-
-      <!-- TEXT vlevo -->
-      <div class="left">
-        <div class="blok-nadpis">
-          <h1 class="hlavni-claim">O nás</h1>
+  <!-- MODRÁ ÚVODNÍ SEKCE -->
+  <section class="sekce-modra">
+    <div class="sekce-modra-obal">
+      <div class="radek">
+        <div class="sloupec-levy">
+          <h2 class="sekce-titulek">O nás</h2>
+          <p class="sekce-lead">
+            <strong>Intaxa Partners s.r.o.</strong> je účetní a daňová společnost se sídlem v Brně. Společnost byla založena v roce 2017 jako pokračovatel podnikatelské činnosti 
+            <strong>Ing. Aleny Zavřelové</strong>, která zahájila svou činnost jako fyzická osoba <strong>28. července 1992</strong>.
+          </p>
+          <p>
+            Na tradici osobního přístupu a odbornosti dnes navazuje moderní tým, který poskytuje stabilní zázemí podnikatelům, malým i středním firmám. 
+            Společnost využívá moderní <strong>technologie, digitalizaci a online přístup k datům</strong>, aby klienti měli své účetní, daňové a mzdové informace vždy bezpečně a pohodlně k dispozici.
+          </p>
         </div>
-        <p class="lead">
-          <strong>Intaxa Partners s.r.o.</strong> je účetní a daňová společnost se sídlem v Brně. Společnost byla založena v roce 2017 jako pokračovatel podnikatelské činnosti 
-          <strong>Ing. Aleny Zavřelové</strong>, která zahájila svou činnost jako fyzická osoba <strong>28. července 1992</strong>.
-        </p>
-        <p>
-          Na tradici osobního přístupu a odbornosti dnes navazuje moderní tým, který poskytuje stabilní zázemí podnikatelům, malým i středním firmám. 
-          Společnost využívá moderní <strong>technologie, digitalizaci a online přístup k datům</strong>, aby klienti měli své účetní, daňové a mzdové informace vždy bezpečně a pohodlně k dispozici.
-        </p>
+
+        <div class="sloupec-pravy">
+          <img src="images/kancelar3.jpg" alt="Naše kancelář" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SVĚTLÁ SEKCE SLUŽEB -->
+  <section class="sekce-bila" aria-labelledby="sluzby-nadpis">
+    <div class="obal-1200">
+      <div class="hlava-stred">
+        <h2 id="sluzby-nadpis" class="hlava-titulek">Účetní služby navržené pro váš klid a růst</h2>
       </div>
 
-      <!-- OBRÁZEK vpravo -->
-      <div class="right">
-        <img src="images/kancelar3.jpg" alt="Naše kancelář" />
+      <div class="grid-3">
+        <a class="karta" href="/ucetnictvi">
+          <div class="ikona" aria-hidden="true">📘</div>
+          <h3 class="karta-titulek">Účetnictví</h3>
+          <p class="karta-text">Kompletní vedení účetnictví, měsíční přehledy a podklady pro daně.</p>
+        </a>
+
+        <a class="karta" href="/mzdy">
+          <div class="ikona" aria-hidden="true">💼</div>
+          <h3 class="karta-titulek">Mzdy</h3>
+          <p class="karta-text">Výpočty mezd, odvody, komunikace s úřady a přehledné výstupy.</p>
+        </a>
+
+        <a class="karta" href="/digitalizace">
+          <div class="ikona" aria-hidden="true">🧮</div>
+          <h3 class="karta-titulek">Digitalizace</h3>
+          <p class="karta-text">On-line sdílení dokladů, automatizace procesů a bezpečný přístup k datům.</p>
+        </a>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-
-<!-- SLUŽBY – bílé pozadí, 3 sloupce, ikony jako emoji v textu -->
-<section class="sluzby-bile">
-  <div class="sluzby-obal">
-    <div class="sluzby-hlavicka">
-      <span class="mini-nadpis">NAŠE SLUŽBY</span>
-      <h2 class="hlavni-nadpis">Účetní služby navržené pro váš klid a růst</h2>
-    </div>
-
-    <div class="sluzby-grid">
-      <article class="sluzba">
-        <div class="ikona" aria-hidden="true">🧾</div>
-        <h3 class="nazev">Vedení účetnictví</h3>
-        <p class="popis">Průběžné vedení účetnictví a daňové evidence, měsíční přehledy a jistota v číslech.</p>
-      </article>
-
-      <article class="sluzba">
-        <div class="ikona" aria-hidden="true">🧮</div>
-        <h3 class="nazev">Daňová přiznání</h3>
-        <p class="popis">Zpracování a podání všech typů přiznání v termínu — bez stresu a chyb.</p>
-      </article>
-
-      <article class="sluzba">
-        <div class="ikona" aria-hidden="true">💼</div>
-        <h3 class="nazev">Mzdy a personalistika</h3>
-        <p class="popis">Výpočty mezd, odvody, komunikace s úřady a přehledné výstupy pro vedení.</p>
-      </article>
-
-      <article class="sluzba">
-        <div class="ikona" aria-hidden="true">🏛️</div>
-        <h3 class="nazev">Zastupování na úřadech</h3>
-        <p class="popis">Jednání s FÚ, OSSZ a ZP vyřídíme za vás — šetříme čas i starosti.</p>
-      </article>
-
-      <article class="sluzba">
-        <div class="ikona" aria-hidden="true">📈</div>
-        <h3 class="nazev">Daňová optimalizace</h3>
-        <p class="popis">Legální snižování daňové zátěže, plánování a průběžná doporučení.</p>
-      </article>
-
-      <article class="sluzba">
-        <div class="ikona" aria-hidden="true">🔎</div>
-        <h3 class="nazev">Související služby</h3>
-        <p class="popis">Kontrolní hlášení, přehledy, reporty a ad-hoc poradenství dle vašich potřeb.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-
+  <!-- PROČ MY -->
 <section class="proc">
-  <div class="obal">
-    <p class="mini">Několik důvodů</p>
-    <h2 class="nadpis">Proč si vybrat nás</h2>
+  <div class="obal proc-obsah">
+    <!-- Levý sloupec: obrázek -->
+    <div class="proc-levy">
+      <img src="images/kancelar.jpg" alt="Intaxa – náš tým při práci">
+    </div>
 
-    <div class="seznam">
-      <div class="polozka">
-        <span class="no">01</span><span class="cara"></span>
-        <div class="txt">
-          <h3 class="tit">30 let praxe</h3>
-          <p class="pop">Navazujeme na více než 30 let praxe Ing. Aleny Zavřelové v oblasti účetnictví a daní.</p>
+    <!-- Pravý sloupec: nadpis + seznam důvodů -->
+    <div class="proc-pravy">
+      <h2 class="proc-nadpis">Proč si nás vybrat</h2>
+
+      <div class="proc-seznam">
+        <!-- tvoje původní položky zůstávají beze změny -->
+        <div class="proc-polozka">
+          <h3 class="proc-tit">30 let praxe</h3>
+          <p class="proc-pop">Navazujeme na více než 30 let praxe Ing. Aleny Zavřelové v oblasti účetnictví a daní.</p>
         </div>
-      </div>
 
-      <div class="polozka">
-        <span class="no">02</span><span class="cara"></span>
-        <div class="txt">
-          <h3 class="tit">Členové KDP ČR</h3>
-          <p class="pop">Jsme členy Komory daňových poradců ČR.</p>
+        <div class="proc-polozka">
+          <h3 class="proc-tit">Členové KDP ČR</h3>
+          <p class="proc-pop">Jsme členy Komory daňových poradců ČR.</p>
         </div>
-      </div>
 
-      <div class="polozka">
-        <span class="no">03</span><span class="cara"></span>
-        <div class="txt">
-          <h3 class="tit">Moderní technologie</h3>
-          <p class="pop">Využíváme moderní technologie pro efektivní a bezpečnou práci s daty.</p>
+        <div class="proc-polozka">
+          <h3 class="proc-tit">Moderní technologie</h3>
+          <p class="proc-pop">Využíváme moderní technologie pro efektivní a bezpečnou práci s daty.</p>
         </div>
-      </div>
 
-      <div class="polozka">
-        <span class="no">04</span><span class="cara"></span>
-        <div class="txt">
-          <h3 class="tit">Osobní přístup</h3>
-          <p class="pop">Nabízíme osobní přístup, profesionalitu a diskrétnost.</p>
+        <div class="proc-polozka">
+          <h3 class="proc-tit">Osobní přístup</h3>
+          <p class="proc-pop">Nabízíme osobní přístup, profesionalitu a diskrétnost.</p>
         </div>
-      </div>
 
-      <div class="polozka">
-        <span class="no">05</span><span class="cara"></span>
-        <div class="txt">
-          <h3 class="tit">Celá ČR</h3>
-          <p class="pop">Sídlíme v Brně, ale naše služby poskytujeme klientům z celé České republiky.</p>
+        <div class="proc-polozka">
+          <h3 class="proc-tit">Celá ČR</h3>
+          <p class="proc-pop">Sídlíme v Brně, ale naše služby poskytujeme klientům z celé České republiky.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA: O nás -->
-<section class="cta">
-  <div class="cta-obal">
-    <div class="cta-texty">
-      <h2 class="cta-nadpis">Chcete mít účetnictví bez starostí?</h2>
-      <p class="cta-popis">
-        Jsme tu pro vás jako spolehlivý partner v účetnictví i daních. 
-        Kontaktujte nás ještě dnes a domluvte si spolupráci, která vám ušetří čas, sníží rizika a umožní soustředit se na rozvoj vašeho podnikání.
-      </p>
-      <a href="kontakt.html" class="tlacitko tlacitko--prim">
-        Ozvěte se nám <span class="sipka">→</span>
-      </a>
-    </div>
-    <div class="cta-fotka">
-      <img src="images/kontakt.webp" alt="Naše kancelář" loading="lazy">
+
+<section class="vizitky-sekce" aria-label="Náš tým">
+  <div class="obal-1200">
+
+    <h2 class="vizitky-nadpis">Náš tým</h2>
+
+    <div class="grid-vizitky">
+
+      <!-- 1 -->
+      <div class="vizitka-blok">
+        <div class="vizitka" tabindex="0" aria-label="Vizitka: Ing. Alena Zavřelová">
+          <div class="karta">
+            <img class="strana predek" src="vizitka/vizitka.png" alt="Přední strana vizitky – Intaxa" loading="lazy">
+            <img class="strana zadek"  src="vizitka/alena.png"   alt="Zadní strana vizitky – kontakty Alena Zavřelová" loading="lazy">
+          </div>
+        </div>
+        <div class="info">
+          <h3 class="jmeno">Ing. Alena Zavřelová</h3>
+          <p class="pozice">Majitelka</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="vizitka-blok">
+        <div class="vizitka" tabindex="0" aria-label="Vizitka: David Novák">
+          <div class="karta">
+            <img class="strana predek" src="vizitka/vizitka.png" alt="Přední strana vizitky – Intaxa" loading="lazy">
+            <img class="strana zadek"  src="vizitka/david.png"   alt="Zadní strana vizitky – kontakty David Novák" loading="lazy">
+          </div>
+        </div>
+        <div class="info">
+          <h3 class="jmeno">Bc. David Zavřel</h3>
+          <p class="pozice">Jednatel</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="vizitka-blok">
+        <div class="vizitka" tabindex="0" aria-label="Vizitka: Jan Dvořák">
+          <div class="karta">
+            <img class="strana predek" src="vizitka/vizitka.png" alt="Přední strana vizitky – Intaxa" loading="lazy">
+            <img class="strana zadek"  src="vizitka/honza.png"   alt="Zadní strana vizitky – kontakty Jan Dvořák" loading="lazy">
+          </div>
+        </div>
+        <div class="info">
+          <h3 class="jmeno">Bc. Jan Zavřel</h3>
+          <p class="pozice">Jednatel</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="vizitka-blok">
+        <div class="vizitka" tabindex="0" aria-label="Vizitka: Jana Veselá">
+          <div class="karta">
+            <img class="strana predek" src="vizitka/vizitka.png" alt="Přední strana vizitky – Intaxa" loading="lazy">
+            <img class="strana zadek"  src="vizitka/jana.png"    alt="Zadní strana vizitky – kontakty Jana Veselá" loading="lazy">
+          </div>
+        </div>
+        <div class="info">
+          <h3 class="jmeno">Bc. Jana Sadílková</h3>
+          <p class="pozice">Mzdová účetní</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -200,10 +210,106 @@
 
 
 
-  </main>
 
-  <footer>
-    &copy; 2025 Intaxa Partners s.r.o.| Všechna práva vyhrazena.
+
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-obal">
+      <div class="cta-texty">
+        <h2 class="cta-nadpis">Chcete mít účetnictví bez starostí?</h2>
+        <p class="cta-popis">
+          Jsme tu pro vás jako spolehlivý partner v účetnictví i daních. 
+          Kontaktujte nás ještě dnes a domluvte si spolupráci, která vám ušetří čas, sníží rizika a umožní soustředit se na rozvoj vašeho podnikání.
+        </p>
+        <a href="kontakt.html" class="tlacitko tlacitko--prim">
+          Ozvěte se nám <span class="sipka">→</span>
+        </a>
+      </div>
+      <div class="cta-fotka">
+        <img src="images/kontakt.webp" alt="Naše kancelář" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- PATIČKA -->
+<div class="obal-paticka">
+  <footer class="paticka">
+    <div class="paticka-obsah">
+      <div class="sloup">
+        <h4 class="nadpis">Navigace <span class="cara"></span></h4>
+        <ul class="seznam">
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="oNas.html">O nás</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="sloup">
+        <h4 class="nadpis">Naše služby <span class="cara"></span></h4>
+        <ul class="seznam">
+          <li><a href="#">Účetnictví</a></li>
+          <li><a href="#">Mzdy</a></li>
+          <li><a href="#">Digitalizace</a></li>
+        </ul>
+      </div>
+
+      <div class="sloup sloup-kontakt">
+        <h4 class="nadpis">Kontakt <span class="cara"></span></h4>
+        <ul class="seznam bez-odkazu">
+          <li>📞 +420 123 456 789</li>
+          <li>✉️ <a href="mailto:info@intaxa.cz">info@intaxa.cz</a></li>
+          <li><strong>IČO:</strong> 12345678</li>
+          <li><strong>DIČ:</strong> CZ12345678</li>
+        </ul>
+      </div>
+
+      <div class="sloup sloup-adresa">
+        <h4 class="nadpis">Kancelář <span class="cara"></span></h4>
+        <ul class="seznam bez-odkazu">
+          <li>Obřanská 1115/43</li>
+          <li>614 00 Brno – Maloměřice</li>
+          <li>Po–Čt 8:00–16:00</li>
+          <li>Pá 8:00–14:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="paticka-spodek">
+      <img src="images/logo.png" alt="Intaxa Partners logo" class="logo">
+      <p class="copy">© 2025 Intaxa Partners s.r.o. Všechna práva vyhrazena.</p>
+      <a href="kontakt.html" class="tlacitko tlacitko--prim">Napište nám!</a>
+    </div>
   </footer>
+</div>
+
+<script>
+  /* Automatické otočení vizitek na mobilních zařízeních */
+  (function(){
+    // Spustí se jen na mobilech (max 768px)
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if(!isMobile) return;
+
+    const cards = document.querySelectorAll('.vizitky-sekce .vizitka');
+    if (!('IntersectionObserver' in window) || cards.length === 0) return;
+
+    // Sleduje, kdy se vizitka objeví ve viewportu
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');   // přidá třídu po zobrazení
+          io.unobserve(entry.target);               // otočí se jen jednou
+        }
+      });
+    }, { threshold: 0.4 });
+
+    cards.forEach(card=>io.observe(card));
+  })();
+</script>
+
+
+
 </body>
 </html>
