@@ -1,201 +1,307 @@
 /* =========================
-   NAV – desktop (beze změny)
+   NAV – desktop
    ========================= */
-.navigace-fixni{
-  position:fixed; top:0; left:0; width:100%; z-index:1000;
-  background-color:#11175B;
-  padding:1.6rem 0;                  /* původní výška baru */
-  border-bottom:3px solid #0081C6;
-  box-shadow:0 4px 12px rgba(0,0,0,.08);
-  font-family:'Inter', sans-serif;
+.navigace-fixni {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #11175B;
+  padding: 1.6rem 0;
+  border-bottom: 3px solid #0081C6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+  font-family: 'Inter', sans-serif;
 }
 
-/* 1200px + malinké vnitřní okraje = logo víc k levému kraji */
-.navigace-obal{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 8px;                     /* původní */
-  display:flex; align-items:center; gap:28px;
+.navigace-obal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 
-/* Logo o chlup větší */
-.logo-blok img{
-  height:46px;                       /* původní 46 px */
-  width:auto; object-fit:contain;
+.logo-blok img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
 }
 
-/* Menu doprava, větší písmo */
-.navigacni-odkazy{
-  display:flex; align-items:center; gap:1.9rem;
-  list-style:none; margin:0; padding:0;
-  margin-left:auto;                  /* blok odkazů k pravému okraji */
-  flex-wrap:nowrap;                  /* nezalamovat na desktopu */
+.navigacni-odkazy {
+  display: flex;
+  align-items: center;
+  gap: 1.9rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  flex-wrap: nowrap;
 }
 
-/* Odkazy */
-.navigacni-odkazy a{
-  position:relative;                 /* kvůli underline ::after */
-  white-space:nowrap; color:#fff; text-decoration:none;
-  font-weight:400;                   /* aktivní nepřidá šířku */
-  font-size:1.18rem;                 /* větší text */
-  padding:.55rem .7rem;              /* vertikální rytmus */
-  border-radius:6px;
-  transition:color .25s ease;
-  background:transparent;
+.navigacni-odkazy a {
+  position: relative;
+  white-space: nowrap;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.18rem;
+  padding: .55rem .7rem;
+  border-radius: 6px;
+  transition: color .25s ease;
 }
 
-/* Jemná animovaná linka pod textem (neovlivní layout) */
-.navigacni-odkazy a::after{
-  content:"";
-  position:absolute;
-  left:.7rem; right:.7rem;
-  bottom:.15rem;
-  height:3px;
-  background:#0081C6;
-  border-radius:3px;
-  transform:scaleX(0);
-  transform-origin:center;
-  transition:transform .28s ease;
+.navigacni-odkazy a::after {
+  content: "";
+  position: absolute;
+  left: .7rem;
+  right: .7rem;
+  bottom: .15rem;
+  height: 3px;
+  background: #0081C6;
+  border-radius: 3px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .28s ease;
 }
 
-/* Hover: pouze podtržení (bez background fill) */
-.navigacni-odkazy a:hover{ color:#fff; }
-.navigacni-odkazy a:hover::after{ transform:scaleX(1); }
+.navigacni-odkazy a:hover::after {
+  transform: scaleX(1);
+}
 
-/* Aktivní stránka – trvalá linka */
 .navigacni-odkazy a.je-aktivni,
-.navigacni-odkazy a[aria-current="page"]{
-  color:#fff; font-weight:400;
-}
-.navigacni-odkazy a.je-aktivni::after,
-.navigacni-odkazy a[aria-current="page"]::after{
-  transform:scaleX(1);
+.navigacni-odkazy a[aria-current="page"] {
+  color: #fff;
 }
 
-/* Tlačítko vpravo – „lesk“ (shimmer) */
-.tlacitko-prihlaseni{
-  position:relative;
-  display:inline-block;
-  background:#0081C6; color:#fff; text-decoration:none;
-  font-weight:400; text-transform:uppercase; letter-spacing:.6px;
-  font-size:1.16rem;
-  padding:.72rem 1.5rem;
-  border-radius:8px;
-  box-shadow:0 4px 10px rgba(0,0,0,.12);
-  overflow:hidden;
-  transition: background .25s ease, transform .15s ease, box-shadow .25s ease, border-color .25s ease;
+.navigacni-odkazy a.je-aktivni::after,
+.navigacni-odkazy a[aria-current="page"]::after {
+  transform: scaleX(1);
 }
-.tlacitko-prihlaseni::before{
-  content:"";
-  position:absolute; inset:0;
+
+/* Tlačítko – desktop */
+.tlacitko-prihlaseni {
+  position: relative;
+  display: inline-block;
+  background: #0081C6;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  font-size: 1.16rem;
+  padding: .72rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .12);
+  overflow: hidden;
+  transition: background .25s ease, transform .15s ease, box-shadow .25s ease;
+}
+
+.tlacitko-prihlaseni::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   transform: translateX(-120%);
   background: linear-gradient(120deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.18) 45%,
-    rgba(255,255,255,0) 90%);
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.18) 45%,
+    rgba(255, 255, 255, 0) 90%);
   transition: transform .6s ease-in-out;
-  pointer-events:none;
-}
-.tlacitko-prihlaseni:hover::before{ transform: translateX(120%); }
-.tlacitko-prihlaseni:hover{
-  background:#005fa3; transform: translateY(-1px);
-  box-shadow:0 6px 16px rgba(0,0,0,.15);
-  border-color:#005fa3;
+  pointer-events: none;
 }
 
-/* Přístupnost – focus outline jen při klávesnici */
-.navigacni-odkazy a:focus-visible,
-.tlacitko-prihlaseni:focus-visible{
-  outline:3px solid rgba(0,129,198,.6);
-  outline-offset:2px;
+.tlacitko-prihlaseni:hover::before {
+  transform: translateX(120%);
+}
+
+.tlacitko-prihlaseni:hover {
+  background: #005fa3;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .15);
 }
 
 /* =========================
-   Hamburger / panel – default hidden
+   HAMBURGER MENU – skryté
    ========================= */
 .hamburger,
 .nav-backdrop,
 .mob-only,
-.tlacitko-prihlaseni-mob{ display:none; }
-
-/* hezké „čáry“ hamburgeru (zarovnané doprostřed lišty) */
-.hamburger{
-  position:absolute;
-  right:12px;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:1002;
-  width:40px; height:40px;
-  border-radius:8px;
-  align-items:center; justify-content:center;
-  cursor:pointer; user-select:none;
-  -webkit-tap-highlight-color:transparent;
-}
-.hamburger span{
-  display:block;
-  width:24px; height:3px;
-  background:#fff;
-  border-radius:3px;
-  transition:transform .25s ease, opacity .25s ease, width .2s ease;
-  box-shadow:0 0 1px rgba(0,0,0,.2);
-}
-.hamburger span + span{ margin-top:5px; }
-
-/* backdrop */
-.nav-backdrop{
-  position:fixed; inset:0;
-  background:rgba(0,0,0,.35);
-  opacity:0; pointer-events:none;
-  transition:opacity .25s ease;
-  z-index:1000;
+.tlacitko-prihlaseni-mob {
+  display: none !important;
 }
 
 /* =========================
-   Mobilní rozhraní (≤900px)
+   MOBILNÍ REŽIM
    ========================= */
-@media (max-width:900px){
-  .navigace-fixni{ padding:1.1rem 0; }
-  .navigace-obal{ padding:0 56px 0 12px; gap:12px; }
-
-  /* zobrazíme hamburger + backdrop */
-  .hamburger, .nav-backdrop{ display:block; }
-
-  /* skryj desktopové tlačítko, tlačítko bude v panelu */
-  .tlacitko-prihlaseni-desktop{ display:none; }
-
-  /* off-canvas panel zprava */
-  .navigacni-odkazy{
-    position:fixed;
-    top:0; right:0; bottom:0;
-    width:min(320px, 78vw);
-    background:#11175B;
-    border-left:3px solid #0081C6;
-    box-shadow:-14px 0 28px rgba(0,0,0,.28);
-    padding:84px 18px 18px;          /* prostor nahoře pro hamburger */
-    display:flex; flex-direction:column; align-items:flex-start;
-    gap:12px;
-    transform:translateX(100%);
-    transition:transform .28s ease;
-    z-index:1001;
-    margin:0;
+@media (max-width: 900px) {
+  .navigace-fixni {
+    padding: 1.1rem 0;
   }
-  .navigacni-odkazy a{
-    display:block; width:100%;
-    font-size:1.18rem;
-    padding:.65rem .4rem;
+
+  .navigace-obal {
+    padding: 0 56px 0 12px;
+    gap: 12px;
   }
-  .navigacni-odkazy a::after{ left:.4rem; right:.4rem; bottom:.2rem; }
 
-  /* tlačítko v panelu */
-  .mob-only, .tlacitko-prihlaseni-mob{ display:block; }
-  .tlacitko-prihlaseni-mob{ width:100%; text-align:center; margin-top:.4rem; }
+  .hamburger,
+  .nav-backdrop {
+    display: block !important;
+  }
 
-  /* otevření (checkbox) */
-  #nav-toggle:checked ~ .navigace-obal .navigacni-odkazy{ transform:translateX(0); }
-  #nav-toggle:checked ~ .nav-backdrop{ opacity:1; pointer-events:auto; }
+  .hamburger {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1002;
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
 
-  /* animace hamburger -> křížek (přesné posuny) */
-  #nav-toggle:checked + .hamburger span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
-  #nav-toggle:checked + .hamburger span:nth-child(2){ opacity:0; }
-  #nav-toggle:checked + .hamburger span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+  .hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+
+  .hamburger span + span {
+    margin-top: 5px;
+  }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+    z-index: 1000;
+  }
+
+  .navigacni-odkazy {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(320px, 78vw);
+    background: #11175B;
+    border-left: 3px solid #0081C6;
+    box-shadow: -14px 0 28px rgba(0, 0, 0, .28);
+    padding: 84px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    transform: translateX(100%);
+    transition: transform .28s ease;
+    z-index: 1001;
+  }
+
+  .navigacni-odkazy a {
+    display: block;
+    width: 100%;
+    font-size: 1.18rem;
+    padding: .65rem .4rem;
+  }
+
+  .navigacni-odkazy a::after {
+    left: .4rem;
+    right: .4rem;
+    bottom: .2rem;
+  }
+
+  /* Desktopové tlačítko pryč */
+  .tlacitko-prihlaseni {
+    display: none !important;
+  }
+
+  /* tlačítko v panelu – stejné jako desktop */
+  .mob-only,
+  .tlacitko-prihlaseni-mob {
+    display: block !important;
+  }
+
+  .tlacitko-prihlaseni-mob {
+    width: 100%;
+    text-align: center;
+    margin-top: .6rem;
+    background: #0081C6;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    font-size: 1.05rem;
+    padding: .8rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .12);
+    position: relative;
+    overflow: hidden;
+    transition: background .25s ease, transform .15s ease, box-shadow .25s ease;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .tlacitko-prihlaseni-mob::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-120%);
+    background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.18) 45%,
+      rgba(255, 255, 255, 0) 90%);
+    transition: transform .6s ease-in-out;
+    pointer-events: none;
+  }
+
+  .tlacitko-prihlaseni-mob:hover::before {
+    transform: translateX(120%);
+  }
+
+  .tlacitko-prihlaseni-mob:hover {
+    background: #005fa3;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .15);
+  }
+
+  /* otevření menu */
+  #nav-toggle:checked ~ .navigace-obal .navigacni-odkazy {
+    transform: translateX(0);
+  }
+
+  #nav-toggle:checked ~ .nav-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* tlačítko zobrazit po otevření */
+  #nav-toggle:checked ~ .navigace-obal .navigacni-odkazy .tlacitko-prihlaseni-mob {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s ease;
+  }
+
+  /* animace hamburger → křížek */
+  #nav-toggle:checked + .hamburger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #nav-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #nav-toggle:checked + .hamburger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }
