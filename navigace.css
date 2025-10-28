@@ -1,8 +1,10 @@
-/* NAV – vyšší, větší text */
+/* =========================
+   NAV – desktop (beze změny)
+   ========================= */
 .navigace-fixni{
   position:fixed; top:0; left:0; width:100%; z-index:1000;
   background-color:#11175B;
-  padding:1.6rem 0;                  /* původní výška baru ponechána */
+  padding:1.6rem 0;                  /* původní výška baru */
   border-bottom:3px solid #0081C6;
   box-shadow:0 4px 12px rgba(0,0,0,.08);
   font-family:'Inter', sans-serif;
@@ -27,16 +29,16 @@
   display:flex; align-items:center; gap:1.9rem;
   list-style:none; margin:0; padding:0;
   margin-left:auto;                  /* blok odkazů k pravému okraji */
-  flex-wrap:nowrap;                  /* FIX: nezalamovat na desktopu */
+  flex-wrap:nowrap;                  /* nezalamovat na desktopu */
 }
 
 /* Odkazy */
 .navigacni-odkazy a{
   position:relative;                 /* kvůli underline ::after */
   white-space:nowrap; color:#fff; text-decoration:none;
-  font-weight:400;                   /* FIX: aktivní nepřidá šířku */
-  font-size:1.18rem;                 /* původní větší text */
-  padding:.55rem .7rem;              /* původní vertikální rytmus */
+  font-weight:400;                   /* aktivní nepřidá šířku */
+  font-size:1.18rem;                 /* větší text */
+  padding:.55rem .7rem;              /* vertikální rytmus */
   border-radius:6px;
   transition:color .25s ease;
   background:transparent;
@@ -56,29 +58,28 @@
   transition:transform .28s ease;
 }
 
-/* Hover: pouze podtržení (bez background fill, ať nic neodskočí) */
+/* Hover: pouze podtržení (bez background fill) */
 .navigacni-odkazy a:hover{ color:#fff; }
 .navigacni-odkazy a:hover::after{ transform:scaleX(1); }
 
-/* Aktivní stránka – trvalá linka, beze změny šířky textu */
+/* Aktivní stránka – trvalá linka */
 .navigacni-odkazy a.je-aktivni,
 .navigacni-odkazy a[aria-current="page"]{
-  color:#fff;
-  font-weight:400;                   /* FIX: zůstává 400 => žádný posun mezer */
+  color:#fff; font-weight:400;
 }
 .navigacni-odkazy a.je-aktivni::after,
 .navigacni-odkazy a[aria-current="page"]::after{
   transform:scaleX(1);
 }
 
-/* Tlačítko vpravo – větší + “lesk” (shimmer) – ponecháno */
+/* Tlačítko vpravo – „lesk“ (shimmer) */
 .tlacitko-prihlaseni{
   position:relative;
   display:inline-block;
   background:#0081C6; color:#fff; text-decoration:none;
   font-weight:400; text-transform:uppercase; letter-spacing:.6px;
-  font-size:1.16rem;                 /* větší text */
-  padding:.72rem 1.5rem;             /* větší výška */
+  font-size:1.16rem;
+  padding:.72rem 1.5rem;
   border-radius:8px;
   box-shadow:0 4px 10px rgba(0,0,0,.12);
   overflow:hidden;
@@ -109,15 +110,92 @@
   outline-offset:2px;
 }
 
-/* Mobil */
+/* =========================
+   Hamburger / panel – default hidden
+   ========================= */
+.hamburger,
+.nav-backdrop,
+.mob-only,
+.tlacitko-prihlaseni-mob{ display:none; }
+
+/* hezké „čáry“ hamburgeru (zarovnané doprostřed lišty) */
+.hamburger{
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:1002;
+  width:40px; height:40px;
+  border-radius:8px;
+  align-items:center; justify-content:center;
+  cursor:pointer; user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.hamburger span{
+  display:block;
+  width:24px; height:3px;
+  background:#fff;
+  border-radius:3px;
+  transition:transform .25s ease, opacity .25s ease, width .2s ease;
+  box-shadow:0 0 1px rgba(0,0,0,.2);
+}
+.hamburger span + span{ margin-top:5px; }
+
+/* backdrop */
+.nav-backdrop{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.35);
+  opacity:0; pointer-events:none;
+  transition:opacity .25s ease;
+  z-index:1000;
+}
+
+/* =========================
+   Mobilní rozhraní (≤900px)
+   ========================= */
 @media (max-width:900px){
   .navigace-fixni{ padding:1.1rem 0; }
-  .navigace-obal{ padding:0 12px; gap:12px; }
-  .logo-blok img{ height:40px; }
+  .navigace-obal{ padding:0 56px 0 12px; gap:12px; }
+
+  /* zobrazíme hamburger + backdrop */
+  .hamburger, .nav-backdrop{ display:block; }
+
+  /* skryj desktopové tlačítko, tlačítko bude v panelu */
+  .tlacitko-prihlaseni-desktop{ display:none; }
+
+  /* off-canvas panel zprava */
   .navigacni-odkazy{
-    flex-wrap:wrap;                 /* na mobilu zase povolíme wrap */
-    justify-content:center; gap:1rem;
-    margin-left:0; order:3; width:100%;
+    position:fixed;
+    top:0; right:0; bottom:0;
+    width:min(320px, 78vw);
+    background:#11175B;
+    border-left:3px solid #0081C6;
+    box-shadow:-14px 0 28px rgba(0,0,0,.28);
+    padding:84px 18px 18px;          /* prostor nahoře pro hamburger */
+    display:flex; flex-direction:column; align-items:flex-start;
+    gap:12px;
+    transform:translateX(100%);
+    transition:transform .28s ease;
+    z-index:1001;
+    margin:0;
   }
-  .navigacni-odkazy a::after{ bottom:.1rem; }  /* menší odstup linky */
+  .navigacni-odkazy a{
+    display:block; width:100%;
+    font-size:1.18rem;
+    padding:.65rem .4rem;
+  }
+  .navigacni-odkazy a::after{ left:.4rem; right:.4rem; bottom:.2rem; }
+
+  /* tlačítko v panelu */
+  .mob-only, .tlacitko-prihlaseni-mob{ display:block; }
+  .tlacitko-prihlaseni-mob{ width:100%; text-align:center; margin-top:.4rem; }
+
+  /* otevření (checkbox) */
+  #nav-toggle:checked ~ .navigace-obal .navigacni-odkazy{ transform:translateX(0); }
+  #nav-toggle:checked ~ .nav-backdrop{ opacity:1; pointer-events:auto; }
+
+  /* animace hamburger -> křížek (přesné posuny) */
+  #nav-toggle:checked + .hamburger span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+  #nav-toggle:checked + .hamburger span:nth-child(2){ opacity:0; }
+  #nav-toggle:checked + .hamburger span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
 }
