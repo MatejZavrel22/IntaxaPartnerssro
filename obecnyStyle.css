@@ -1,0 +1,116 @@
+/* --- Globální nastavení --- */
+body {
+  font-family: 'Loew', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #11175B;
+  overflow-x: hidden;
+  font-size: 18px;      
+  line-height: 1.7;
+  margin-top: 60px;     
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ujistíme se, že běžné prvky mají 18px */
+p, li, td, th, input, textarea, button, a {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* ===================== TLAČÍTKA (globální) ===================== */
+/* Wrapper pro tlačítka v hero */
+.tlacitka {
+  display: flex;
+  gap: 1rem;   /* mezera mezi tlačítky */
+  flex-wrap: wrap;
+}
+
+/* Společný základ */
+.tlacitko {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 1;
+  transition: all .25s ease;
+}
+
+/* Primární plné */
+/* Primární tlačítko s shine efektem */
+.tlacitko--prim {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 1;
+  border: 2px solid #0081C6;
+  background: #0081C6;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 123, 198, .25);
+  overflow: hidden;
+  transition: background 0.4s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Shine efekt */
+.tlacitko--prim::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  transition: left 0.6s ease-in-out;
+  z-index: 1;
+}
+
+/* Hover efekt */
+.tlacitko--prim:hover::before {
+  left: 100%;
+}
+
+.tlacitko--prim:hover {
+  background: #005fa3;
+  border-color: #005fa3;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Outline */
+.tlacitko--okra {
+  background: transparent;
+  color: #0081C6;
+  border: 2px solid #0081C6;
+  transition: all .25s ease;
+}
+
+.tlacitko--okra:hover {
+  background: transparent;          
+  color: #005fa3;                   
+  border-color: #005fa3;            
+  box-shadow: 0 0 10px rgba(0, 129, 198, 0.25); 
+  transform: translateY(-2px);      
+}
+

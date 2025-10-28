@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intaxa Partners s.r.o.</title>
+  <link rel="stylesheet" href="obecnyStyle.css"/>
+  <link rel="stylesheet" href="navigace.css"/>
+  <link rel="stylesheet" href="indexStyle.css"/>
+  <link rel="stylesheet" href="footer.css"/>
+</head>
+<body>
+
+<!-- Navigace -->
+<nav class="navigace-fixni">
+  <!-- toggle (jen pro mobil) -->
+  <input type="checkbox" id="nav-toggle" hidden>
+
+  <!-- hamburger (jen mobil) -->
+  <label for="nav-toggle" class="hamburger" aria-label="Otevřít menu" aria-controls="hlavni-menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </label>
+
+  <!-- backdrop (klik zavře; jen mobil) -->
+  <label for="nav-toggle" class="nav-backdrop" aria-hidden="true"></label>
+
+  <div class="navigace-obal">
+    <a href="index.html" class="logo-blok" aria-label="Domů">
+      <img src="images/logo.png" alt="Logo Intaxa" />
+    </a>
+
+    <ul class="navigacni-odkazy" id="hlavni-menu">
+      <li><a href="index.html">Domů</a></li>
+      <li><a href="oNas.html">O nás</a></li>
+      <li><a href="sluzby.html">Účetnictví</a></li>
+      <li><a href="mzdy.html">Mzdy</a></li>
+      <li><a href="digitalizace.html" aria-current="page">Digitalizace</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+
+      <!-- tlačítko v panelu (jen mobil) -->
+      <li class="mob-only">
+        <a href="index.html" class="tlacitko-prihlaseni tlacitko-prihlaseni-mob">Přihlášení</a>
+      </li>
+    </ul>
+
+    <!-- tlačítko vpravo (zůstává pro desktop) -->
+    <a href="index.html" class="tlacitko-prihlaseni tlacitko-prihlaseni-desktop">Přihlášení</a>
+  </div>
+</nav>
+
+
+<main>
+
+  <!-- HERO: text vlevo, obrazek vpravo -->
+  <section class="hlava">
+    <div class="obal">
+      <div class="text">
+        <h1 class="titulek">
+          Moderní účetnictví<br>
+          <span class="modra">pro firmy i OSVČ</span>
+        </h1>
+
+        <p class="popis">
+          Spolehlivý partner pro kompletní správu účetnictví, mezd a daňových povinností.
+          S námi máte ve financích jasno a můžete se soustředit na růst svého podnikání.
+        </p>
+
+        <div class="tlacitka">
+          <a href="kontakt.html" class="tlacitko tlacitko--prim">Kontaktujte nás</a>
+          <a href="oNas.html" class="tlacitko tlacitko--okra">O naší firmě</a>
+        </div>
+      </div>
+
+      <div class="media">
+        <img src="images/kancelar.jpg" alt="Ilustrační foto účetních služeb" loading="eager">
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- ===== CO PRO VÁS MŮŽEME UDĚLAT ===== -->
+<section class="co-delame" aria-labelledby="co-nadpis">
+  <div class="o-1200">
+
+    <header class="hlava-centrum">
+      <h2 id="co-nadpis">Co pro vás můžeme udělat</h2>
+      <p class="popis">
+        Nabízíme komplexní účetní služby přizpůsobené potřebám podnikatelů a firem všech velikostí.
+        Ať už potřebujete pravidelnou správu účetnictví, zpracování mezd nebo daňové poradenství,
+        jsme tu pro vás.
+      </p>
+    </header>
+
+    <!-- 3 nahoře + 2 dole přesně uprostřed -->
+    <div class="sluzby-grid">
+      <!-- Horní řada -->
+      <a class="polozka top" href="/sluzby/vedeni-ucetnictvi" aria-label="Přejít na Vedení účetnictví">
+        <div class="ik">🧾</div>
+        <h3>Vedení účetnictví</h3>
+        <p>Průběžné vedení účetnictví a daňové evidence, měsíční přehledy a jistota v číslech.</p>
+      </a>
+
+      <a class="polozka top" href="/sluzby/danova-priznani" aria-label="Přejít na Daňová přiznání">
+        <div class="ik">🧮</div>
+        <h3>Daňová přiznání</h3>
+        <p>Zpracování a podání všech typů přiznání v termínu — bez stresu a chyb.</p>
+      </a>
+
+      <a class="polozka top" href="/sluzby/mzdy-personalistika" aria-label="Přejít na Mzdy a personalistika">
+        <div class="ik">💼</div>
+        <h3>Mzdy a personalistika</h3>
+        <p>Výpočty mezd, odvody, komunikace s úřady a přehledné výstupy pro vedení.</p>
+      </a>
+
+      <!-- Spodní řada -->
+      <a class="polozka bot-levo" href="/sluzby/zastupovani-na-uradech" aria-label="Přejít na Zastupování na úřadech">
+        <div class="ik">🏛️</div>
+        <h3>Zastupování na úřadech</h3>
+        <p>Jednání s FÚ, OSSZ a ZP vyřídíme za vás — šetříme čas i starosti.</p>
+      </a>
+
+      <a class="polozka bot-pravo" href="/sluzby/digitalizace" aria-label="Přejít na Digitalizace">
+        <div class="ik">💻</div>
+        <h3>Digitalizace</h3>
+        <p>On-line sdílení dokladů, automatizace procesů a bezpečný přístup k datům.</p>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- O NÁS – NOVÉ ROZLOŽENÍ -->
+<section class="onas">
+  <div class="obal">
+    <div class="foto">
+      <img src="images/kancelar2.jpg" alt="Naše kancelář">
+    </div>
+
+    <div class="text">
+      <h2 class="nadpis">
+        <span>O účetní kanceláři</span>
+      </h2>
+
+      <p><strong>Intaxa Partners s.r.o.</strong> je účetní a daňová společnost se sídlem v Brně, navazující na více než <strong>30 let praxe Ing. Aleny Zavřelové</strong>.</p>
+
+      <p>Využíváme <strong>moderní technologie, digitalizaci a online přístup k datům</strong>, aby klienti měli své účetní, daňové i mzdové informace vždy bezpečně a pohodlně k dispozici.</p>
+
+      <p>Nabízíme <strong>profesionální služby vedení účetnictví, zpracování daňových přiznání a mezd</strong> s osobním přístupem a diskrétností.</p>
+
+      <a href="oNas.html" class="tlacitko tlacitko--prim tlacitko--lg">Zjistit více o nás</a>
+    </div>
+  </div>
+</section>
+
+<!-- NAŠE PŘEDNOSTI -->
+<section class="prednosti">
+  <div class="prednosti-obal">
+    <h2 class="prednosti-nadpis">Proč si vybrat právě nás</h2>
+
+    <ul class="prednosti-list">
+      <li class="prednost" data-num="01">
+        <div class="ico">📊</div>
+        <div class="text">
+          <h3>30 let zkušeností</h3>
+          <p>Navazujeme na dlouholetou praxi a nabízíme ověřené postupy v účetnictví a daních.</p>
+        </div>
+      </li>
+
+      <li class="prednost" data-num="02">
+        <div class="ico">💻</div>
+        <div class="text">
+          <h3>Moderní technologie</h3>
+          <p>Digitalizace a online přístup k dokladům zajistí, že své účetnictví máte vždy po ruce.</p>
+        </div>
+      </li>
+
+      <li class="prednost" data-num="03">
+        <div class="ico">🤝</div>
+        <div class="text">
+          <h3>Individuální přístup</h3>
+          <p>Ke každému klientovi přistupujeme osobně a hledáme řešení na míru.</p>
+        </div>
+      </li>
+
+      <li class="prednost" data-num="04">
+        <div class="ico">🔒</div>
+        <div class="text">
+          <h3>Diskrétnost a jistota</h3>
+          <p>Veškeré informace zpracováváme bezpečně a s maximální diskrétností.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="kontaktHP" id="kontakt">
+  <div class="wrap-1200">
+    <div class="head">
+      <h2 class="title">
+        Kontaktujte nás a zjistěte,<br>
+        jak vám můžeme pomoci s účetnictvím a daněmi!
+      </h2>
+    </div>
+
+    <form class="hp-form" novalidate>
+      <div class="hp-row">
+        <div class="hp-field">
+          <label class="hp-label">Jméno*</label>
+          <input class="hp-input" type="text" name="jmeno" placeholder="Jméno" required>
+        </div>
+
+        <div class="hp-field">
+          <label class="hp-label">E-mail*</label>
+          <input class="hp-input" type="email" name="email" placeholder="E-mail" required>
+        </div>
+
+        <div class="hp-field">
+          <label class="hp-label">Telefon</label>
+          <input class="hp-input" type="tel" name="telefon" placeholder="Telefon">
+        </div>
+      </div>
+
+      <div class="hp-field hp-field--full">
+        <label class="hp-label">Zpráva*</label>
+        <textarea class="hp-input hp-msg" name="zprava" placeholder="Napište zprávu – požadavky, cíle, dotazy…" required></textarea>
+      </div>
+
+      <!-- Barvy/efekty tlačítka dědí z tvé .tlacitko--prim -->
+      <button type="submit" class="tlacitko tlacitko--prim hp-btn">Poslat zprávu</button>
+    </form>
+  </div>
+</section>
+
+
+
+</main>
+
+<!-- PATIČKA -->
+<div class="obal-paticka">
+  <footer class="paticka">
+    <div class="paticka-obsah">
+      <div class="sloup">
+        <h4 class="nadpis">Navigace <span class="cara"></span></h4>
+        <ul class="seznam">
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="oNas.html">O nás</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="sloup">
+        <h4 class="nadpis">Naše služby <span class="cara"></span></h4>
+        <ul class="seznam">
+          <li><a href="#">Účetnictví</a></li>
+          <li><a href="#">Mzdy</a></li>
+          <li><a href="#">Digitalizace</a></li>
+        </ul>
+      </div>
+
+      <div class="sloup sloup-kontakt">
+        <h4 class="nadpis">Kontakt <span class="cara"></span></h4>
+        <ul class="seznam bez-odkazu">
+          <li>📞 +420 123 456 789</li>
+          <li>✉️ <a href="mailto:info@intaxa.cz">info@intaxa.cz</a></li>
+          <li><strong>IČO:</strong> 12345678</li>
+          <li><strong>DIČ:</strong> CZ12345678</li>
+        </ul>
+      </div>
+
+      <div class="sloup sloup-adresa">
+        <h4 class="nadpis">Kancelář <span class="cara"></span></h4>
+        <ul class="seznam bez-odkazu">
+          <li>Obřanská 1115/43</li>
+          <li>614 00 Brno – Maloměřice</li>
+          <li>Po–Čt 8:00–16:00</li>
+          <li>Pá 8:00–14:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="paticka-spodek">
+      <img src="images/logo.png" alt="Intaxa Partners logo" class="logo">
+      <p class="copy">© 2025 Intaxa Partners s.r.o. Všechna práva vyhrazena.</p>
+      <a href="kontakt.html" class="tlacitko tlacitko--prim">Napište nám!</a>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

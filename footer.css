@@ -1,0 +1,132 @@
+/* === PATIČKA (bez stylů tlačítek – bere se z obecnyStyle.css) === */
+.obal-paticka {
+  background-color: #172934;
+  padding: 40px 20px 55px; /* menší mezera nahoře */
+  color: #ffffff;
+  font-family: 'Loew', sans-serif;
+}
+
+.paticka {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #1e3340;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* === HORNÍ OBSAH === */
+.paticka-obsah {
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr 1fr 1fr;
+  gap: 40px;
+  padding: 50px 40px 35px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sloup .nadpis {
+  font-weight: 700;
+  font-size: 17px;           /* jemně menší */
+  margin: 0 0 12px;
+  color: #ffffff;
+}
+
+.cara {
+  display: block;
+  width: 42px;
+  height: 2.5px;
+  background-color: #0081C6;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.seznam {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.seznam li {
+  margin-bottom: 8px;
+  color: #cdd7e3;
+  font-size: 16px;           /* jemně menší než globálních 18px */
+  line-height: 1.6;
+}
+
+.seznam a {
+  color: #cdd7e3;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.seznam a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #74d2ff;
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+
+.seznam a:hover {
+  color: #ffffff;
+}
+
+.seznam a:hover::after {
+  width: 100%;
+}
+
+.bez-odkazu a { color: #cdd7e3; }
+.bez-odkazu a:hover { color: #ffffff; }
+
+.sloup-kontakt li,
+.sloup-adresa li { white-space: nowrap; }
+
+/* === SPODNÍ LIŠTA === */
+.paticka-spodek {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+.copy {
+  font-size: 15px;           /* jemnější text */
+  color: #cdd7e3;
+  margin: 0;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .paticka-obsah {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .sloup-kontakt li,
+  .sloup-adresa li { white-space: normal; }
+}
+
+@media (max-width: 640px) {
+  .paticka-obsah {
+    grid-template-columns: 1fr;
+    padding: 30px 25px;
+  }
+  .paticka-spodek {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  .logo { height: 35px; }
+}
